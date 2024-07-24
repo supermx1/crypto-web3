@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sample Invest</title>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Sample invest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+
+<body class="dashboard-body">
+    <div class="modal fade" role="dialog" tabindex="-1" id="fundwallet">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Fund Wallet</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <form id="fundwalletform">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label for="paymenttype">Payment Type</label><select class="form-control" id="paymenttype" required=""><optgroup label="Supported Payment Types"><option value="Bitcoin" selected="">Bitcoin</option><option value="Ethereum">Ethereum</option><option value="Litecoin">Litecoin</option></optgroup></select></div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="form-group"><label for="fundamount">Amount</label><input class="form-control" type="text" id="fundamount" required="" inputmode="numeric"></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-center body-p mb-0">Wallet Address</p>
+                        <p class="text-center bg-yellow pt-2 pb-2"><strong>BITCOIN</strong>: 231CW1V3H1V31HV3H13H13H1</p>
+                        <div class="text-center"><small class="d-block mb-2">Pay <strong>1.002BTC</strong> to the wallet address above or scan to pay using the qrcode below.</small><img class="img-fluid" src="../assets/img/qrcode.png" width="65%"></div>
+                        <div class="form-group mt-4 text-center"><button class="btn btn3" type="submit">Confirm Deposit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="share">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Share This</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <form id="shareform">
+                        <div class="form-group"><textarea class="form-control" rows="5">I have currently earned $1000 with Sample Invest. Click on link to register. https://sample.com/ref?1234</textarea></div>
+                        <div class="form-row">
+                            <div class="col text-center"><a class="mr-3 social-link" href="#"><i class="fab fa-facebook"></i></a><a class="social-link" href="#"><i class="fab fa-twitter"></i></a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="makeinvestment">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Make Investment</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <p class="body-p">Click on any of the <strong>plans</strong> to select it</p>
+                    <form id="investform">
+                        <p class="text-center bg-red pt-2 pb-2"><strong>Your wallet balance is too low to purchase this plan!</strong></p>
+                        <hr>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group"><input type="radio" class="invest-radio" name="investradio">
+                                    <!-- Start: Card -->
+                                    <div class="p-4 plan-card">
+                                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-briefcase plan-icon">
+  <path fill-rule="evenodd" d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6h-1v6a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-6H0v6z"></path>
+  <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5v2.384l-7.614 2.03a1.5 1.5 0 0 1-.772 0L0 6.884V4.5zM1.5 4a.5.5 0 0 0-.5.5v1.616l6.871 1.832a.5.5 0 0 0 .258 0L15 6.116V4.5a.5.5 0 0 0-.5-.5h-13zM5 2.5A1.5 1.5 0 0 1 6.5 1h3A1.5 1.5 0 0 1 11 2.5V3h-1v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V3H5v-.5z"></path>
+</svg></div>
+                                        <h5 class="plan-h mt-4">Trader Pro</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>3.01% Daily</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $15000 - Max: $50000</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                                        </ul>
+                                    </div>
+                                    <!-- End: Card -->
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group"><input type="radio" class="invest-radio" name="investradio">
+                                    <!-- Start: Card -->
+                                    <div class="p-4 plan-card">
+                                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-bar-chart plan-icon">
+  <path fill-rule="evenodd" d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"></path>
+</svg></div>
+                                        <h5 class="plan-h mt-4">Trader Max</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>3.8% Daily</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $50000 - Max: $150000</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                                        </ul>
+                                    </div>
+                                    <!-- End: Card -->
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group"><input type="radio" class="invest-radio" name="investradio">
+                                    <!-- Start: Card -->
+                                    <div class="p-4 plan-card">
+                                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-bounding-box-circles plan-icon">
+  <path fill-rule="evenodd" d="M2 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM0 2a2 2 0 0 1 3.937-.5h8.126A2 2 0 1 1 14.5 3.937v8.126a2 2 0 1 1-2.437 2.437H3.937A2 2 0 1 1 1.5 12.063V3.937A2 2 0 0 1 0 2zm2.5 1.937v8.126c.703.18 1.256.734 1.437 1.437h8.126a2.004 2.004 0 0 1 1.437-1.437V3.937A2.004 2.004 0 0 1 12.063 2.5H3.937A2.004 2.004 0 0 1 2.5 3.937zM14 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM2 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+</svg></div>
+                                        <h5 class="plan-h mt-4">Professional</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>2.05% Daily</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $5000 - Max: $10000</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                                        </ul>
+                                    </div>
+                                    <!-- End: Card -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4 text-center"><button class="btn btn3" type="submit">Purchase This Plan</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-light navbar-expand-md navbar-dashboard">
+        <div class="container-fluid"><a class="navbar-brand" id="logo2" href="../user/index.html"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"><i class="la la-ellipsis-h dashboard-icon"></i></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav pt-3 pb-3 nav2 pl-3">
+                    <li class="nav-item mr-4"><a class="nav-link active navlink2" href="../user/index.html">Dashboard</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/wallet.html">Wallet</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/investment.html">Investment</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/withdrawals.html">Withdrawals</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/messages.html">Messages<span class="badge badge-pill badge-primary pill-counter">42</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto pt-3 pb-3 nav2 pl-3">
+                    <li class="nav-item mr-4">
+                        <div class="nav-item dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img class="mr-2" src="../assets/img/client03.png" width="30">My Profile</a>
+                            <div class="dropdown-menu"><a class="dropdown-item pt-3 pb-3" href="../user/profile-settings.html">Profile &amp; Settings</a><a class="dropdown-item pt-3 pb-3" href="../index-old.html">Log Out</a></div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="d-flex mmb-3">
+                    <div class="plan-div mobile-hidden" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-columns-gap plan-icon">
+  <path fill-rule="evenodd" d="M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"></path>
+</svg></div>
+                    <h1 class="dashboard-heading-h ml-3">Welcome, Elija Woods</h1>
+                </div>
+            </div>
+            <div class="col text-right mobile-center"><a class="btn btn1 mr-4" role="button" href="#makeinvestment" data-target="#makeinvestment" data-toggle="modal">Make Investment</a><a class="btn btn3" role="button" href="#fundwallet" data-target="#fundwallet" data-toggle="modal">Fund Wallet</a></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-8 mb-3">
+                <div class="card-bg">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card card1">
+                                <div class="card-body"><span class="mb-3">Wallet Balance</span>
+                                    <h1 class="dashboard-heading-h">$1,300,000<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-up green-up">
+  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"></path>
+</svg></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card card1">
+                                <div class="card-body"><span class="mb-3">Invested</span>
+                                    <h1 class="dashboard-heading-h">$300,000<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-plus green-plus text-success">
+  <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+</svg></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card card1">
+                                <div class="card-body"><span class="mb-3">Withdrawn</span>
+                                    <h1 class="dashboard-heading-h">$500,424<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-down red-down">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"></path>
+</svg></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-4 mobile-hidden"><!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_8770f"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.MediumWidget(
+  {
+  "symbols": [
+    [
+      "COINBASE:BTCUSD|12M"
+    ],
+    [
+      "KRAKEN:ETHUSD|12M"
+    ],
+    [
+      "BITFINEX:XRPUSD|12M"
+    ],
+    [
+      "KRAKEN:LTCUSD|12M"
+    ]
+  ],
+  "chartOnly": false,
+  "width": "100%",
+  "height": "400",
+  "locale": "en",
+  "colorTheme": "light",
+  "gridLineColor": "#F0F3FA",
+  "trendLineColor": "#2196F3",
+  "fontColor": "#787B86",
+  "underLineColor": "#E3F2FD",
+  "isTransparent": true,
+  "autosize": false,
+  "container_id": "tradingview_8770f"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END --></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3 mobile-hidden">
+                <div class="card-bg trx-h">
+                    <div class="dropdown float-right"><button class="btn dropdown-toggle drpdwn-togg" data-toggle="dropdown" aria-expanded="false" type="button"><i class="la la-ellipsis-h"></i></button>
+                        <div class="dropdown-menu"><a class="dropdown-item pt-3 pb-3" href="wallet.html">See All Transactions</a></div>
+                    </div>
+                    <h6 class="dashboard-h mb-4">Transaction History</h6>
+                    <div class="trx-history-div">
+                        <div class="card card1 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-up-circle-fill green-up">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+</svg></div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-nowrap text-truncate mb-0 trx-heading">Dogecoin Deposit</h6><span class="date-span">20.10.2020</span></div>
+                                    <div class="col">
+                                        <p class="text-nowrap deposit">$3,000.98</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card1 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-down-circle-fill red-down">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"></path>
+</svg></div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-nowrap text-truncate mb-0 trx-heading">Withdrawal</h6><span class="date-span">21.11.2020</span></div>
+                                    <div class="col">
+                                        <p class="text-nowrap withdrawal">$540.62</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card1 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-up-circle-fill green-up">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+</svg></div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-nowrap text-truncate mb-0 trx-heading">Bitcoin Deposit</h6><span class="date-span">20.10.2020</span></div>
+                                    <div class="col-md-4">
+                                        <p class="text-nowrap deposit">$43,000.98</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card1 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-up-circle-fill green-up">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+</svg></div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-nowrap text-truncate mb-0 trx-heading">Bitcoin Deposit</h6><span class="date-span">20.10.2020</span></div>
+                                    <div class="col-md-4">
+                                        <p class="text-nowrap deposit">$1,000.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card1 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-down-circle-fill red-down">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"></path>
+</svg></div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-nowrap text-truncate mb-0 trx-heading">Withdrawal</h6><span class="date-span">21.11.2020</span></div>
+                                    <div class="col">
+                                        <p class="text-nowrap withdrawal">$5010.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                <div class="card-bg2">
+                    <div class="card-bg2-header"><a class="float-right" href="investment.html">See All</a>
+                        <h6 class="dashboard-h">My Investments</h6>
+                    </div>
+                    <div class="row" style="margin-left: 15px;margin-right: 15px;">
+                        <div class="col">
+                            <div class="table-responsive table-borderless text-nowrap">
+                                <table class="table table-bordered table-spacing">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Profit</th>
+                                            <th>Payout (%)</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-row">
+                                            <td>20.03.2020 12:00</td>
+                                            <td class="green">$3,000</td>
+                                            <td>$567.67</td>
+                                            <td class="green">+1.10%</td>
+                                            <td class="green"><a class="btn btn-sm topbtn" role="button" href="top.html">Top Up</a><a class="ml-2" href="#">View More</a></td>
+                                        </tr>
+                                        <tr class="table-row">
+                                            <td>21.09.2020 08:43</td>
+                                            <td class="green">$2,000</td>
+                                            <td>$123.98</td>
+                                            <td class="green">+1.50%</td>
+                                            <td class="green"><a class="btn btn-sm topbtn" role="button" href="top.html">Top Up</a><a class="ml-2" href="#">View More</a></td>
+                                        </tr>
+                                        <tr class="table-row">
+                                            <td>21.09.2020 08:43</td>
+                                            <td class="green">$1,000</td>
+                                            <td>$1293.09</td>
+                                            <td class="green">+1.50%</td>
+                                            <td class="green"><a class="btn disabled btn-sm topbtn" role="button" href="top.html">No Top Up</a><a class="ml-2" href="#">View More</a></td>
+                                        </tr>
+                                        <tr class="table-row-empty text-center">
+                                            <td colspan="5">No Investments Found</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <div class="card-bg">
+                    <div class="dropdown float-right"><button class="btn dropdown-toggle drpdwn-togg" data-toggle="dropdown" aria-expanded="false" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-share">
+  <path fill-rule="evenodd" d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"></path>
+</svg></button>
+                        <div class="dropdown-menu"><a class="dropdown-item pt-3 pb-3" href="http://www.facebook.com/sharer.php?u=https://sample.com/ref?23242" target="_blank">Share Messages</a><a class="dropdown-item pt-3 pb-3" href="http://www.facebook.com/sharer.php?u=https://sample.com/ref?23242"
+                                target="_blank">Facebook</a><a class="dropdown-item pt-3 pb-3" href="https://twitter.com/share?url=https://sample.com/ref?23242" target="_blank">Twitter</a></div>
+                    </div>
+                    <h6 class="dashboard-h mb-4">Affiliate</h6>
+                    <form>
+                        <div class="form-group"><label>Affiliate Link</label><input class="form-control" type="text" disabled="" value="https://sample.com/ref?1234"></div>
+                    </form>
+                    <hr><a class="float-right" href="#">0</a>
+                    <h6 class="dashboard-h">Invited</h6>
+                    <div style="border: 1px dotted #000;">
+                        <h5 class="text-center">Total Affiliate Bonus</h5>
+                        <h5 class="text-center">$1,000</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+</body>
+
+</html>

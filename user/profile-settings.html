@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sample Invest</title>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Sample invest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+
+<body class="dashboard-body">
+    <nav class="navbar navbar-light navbar-expand-md navbar-dashboard">
+        <div class="container-fluid"><a class="navbar-brand" id="logo2" href="../user/index.html"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"><i class="la la-ellipsis-h dashboard-icon"></i></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav pt-3 pb-3 nav2 pl-3">
+                    <li class="nav-item mr-4"><a class="nav-link active navlink2" href="../user/index.html">Dashboard</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/wallet.html">Wallet</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/investment.html">Investment</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/withdrawals.html">Withdrawals</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/messages.html">Messages<span class="badge badge-pill badge-primary pill-counter">42</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto pt-3 pb-3 nav2 pl-3">
+                    <li class="nav-item mr-4">
+                        <div class="nav-item dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img class="mr-2" src="../assets/img/client03.png" width="30">My Profile</a>
+                            <div class="dropdown-menu"><a class="dropdown-item pt-3 pb-3" href="../user/profile-settings.html">Profile &amp; Settings</a><a class="dropdown-item pt-3 pb-3" href="../index-old.html">Log Out</a></div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="d-flex mmb-3">
+                    <div class="plan-div mobile-hidden" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-person-bounding-box plan-icon">
+  <path fill-rule="evenodd" d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"></path>
+  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+</svg></div>
+                    <h1 class="dashboard-heading-h ml-3">Profile &amp; Settings</h1>
+                </div>
+            </div>
+            <div class="col text-right mobile-center"><a class="btn btn3" role="button" href="mailto:info@sample.com">Contact Support</a></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 mb-3">
+                <div class="card-shadow r-30">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item mr-4" role="presentation"><a class="nav-link" role="tab" data-toggle="tab" href="#profile-settings">Profile Settings<br></a></li>
+                        <li class="nav-item mr-4" role="presentation"><a class="nav-link" role="tab" data-toggle="tab" href="#password-reset">Password Reset</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-toggle="tab" href="#security-auth">Security &amp; Authentication</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane" role="tabpanel" id="profile-settings">
+                            <div class="form-section mb-3">
+                                <p class="mb-0 form-section-p">profile data</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <form>
+                                        <div class="form-group"><label for="fullname">Upload Profile Picture</label>
+                                            <div class="file-drop-area"><span class="fake-btn">Choose files</span><span class="file-msg">or drag and drop files here</span><input type="file" class="file-input"></div>
+                                        </div>
+                                        <div class="form-group"><button class="btn btn3" type="submit">Upload</button></div>
+                                    </form>
+                                    <hr class="mt-4 mb-4">
+                                    <form class="mt-4">
+                                        <div class="form-group"><label for="fullname">Full Name</label><input class="form-control" type="text" id="fullname-1" autofocus="" autocomplete="on" required=""></div>
+                                        <div class="form-group"><label for="email">E-Mail Address</label><input class="form-control" type="email" id="email" autocomplete="on" inputmode="email"></div>
+                                        <div class="form-group"><label for="phonenumber">Phone Number</label><input class="form-control" type="tel" id="phonenumber" autocomplete="on" inputmode="tel" minlength="11" maxlength="14" required=""></div>
+                                        <div class="form-group"><label for="address">Address</label><textarea class="form-control" id="address" autocomplete="on"></textarea></div>
+                                        <div class="form-group formgroup"><button class="btn btn3" type="submit">Update Profile</button></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="password-reset">
+                            <div class="form-section mb-3">
+                                <p class="mb-0 form-section-p">Change Password</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <form class="mt-4">
+                                        <div class="form-group"><label for="currpassword">Current Password</label><input class="form-control" type="password" id="currpassword"></div>
+                                        <div class="form-group"><label for="newpassword">New Password</label>
+                                            <div class="input-group"><input class="form-control pwd" type="password" id="newpassword" required="">
+                                                <div class="input-group-append"><button class="btn reveal" type="button"><i class="la la-eye"></i></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"><label for="confirmnewpassword">Confirm New Password</label><input class="form-control" type="password" id="confirmnewpassword"></div>
+                                        <div class="form-group formgroup"><button class="btn btn3" type="submit">Reset&nbsp; Password</button></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane active" role="tabpanel" id="security-auth">
+                            <div class="form-section mb-3">
+                                <p class="mb-0 form-section-p">Authentication Settings</p>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-md-4 mb-3">
+                                    <form>
+                                        <p class="text-center bg-yellow pt-2 pb-2"><strong>YOUR KEY</strong>: 231CW1V3H1</p><img class="img-fluid" src="../assets/img/qrcode.png" width="100%">
+                                        <div class="form-group mt-3 formgroup"><label for="googleauth">Google Authenticator Code</label><input class="form-control" type="text" id="googleauth"></div>
+                                        <div class="form-group"><button class="btn btn3" type="submit">Activate OTP</button></div>
+                                    </form>
+                                </div>
+                                <div class="col-md-4 pl-3 pr-3 mb-3 mobile-hidden">
+                                    <div>
+                                        <div class="d-flex">
+                                            <div class="d-flex"><i class="icon-info mr-2 mt-1 warning-icon"></i></div>
+                                            <div>
+                                                <p class="mb-2 tip">Click the apple icon to download for Apple devices or click the Android icon to download for Android devices. Scan the Barcode using the Google Authenticator app to get started. Enter the code from to app
+                                                    and click activate to enable Google Authenticator.</p>
+                                                <h6 data-toggle="tooltip" data-bs-tooltip="" class="mt-3" title="Click the apple icon to download for Apple devices or click the Android icon to download for Android devices. Scan the Barcode using the Google Authenticator app to get started. Enter the code from to app and click activate to enable Google Authenticator."><strong>DOWNLOAD</strong></h6><a href="#"><img class="img-fluid mr-2" src="../assets/img/apple.png" width="70px"></a><a href="#"><img class="img-fluid" src="../assets/img/googlePlay.svg" width="70px"></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sample Invest</title>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Sample invest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+
+<body class="dashboard-body">
+    <div class="modal fade" role="dialog" tabindex="-1" id="addwallet">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Add Wallet</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <form id="fundwalletform">
+                        <div class="form-group"><label for="paymenttype">Wallet Type</label><select class="form-control" id="paymenttype" required=""><optgroup label="Supported Wallets"><option value="Bitcoin" selected="">Bitcoin</option><option value="Ethereum">Ethereum</option><option value="Litecoin">Litecoin</option></optgroup></select></div>
+                        <div
+                            class="form-group"><label for="walletaddress">Wallet Address</label><input class="form-control" type="text" id="walletaddress" required="" inputmode="numeric"></div>
+                <div class="form-group mt-4"><button class="btn btn3" type="submit">Add Wallet</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="makewithdrawal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Make Withdrawal</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <form id="fundwalletform-1">
+                        <div class="form-group"><label for="withdrawwallet">Choose Withdrawal Wallet</label><select class="form-control" id="withdrawwallet" required=""><optgroup label="Supported Wallets"><option value="Bitcoin" selected="">Bitcoin</option><option value="Ethereum">Ethereum</option><option value="Litecoin">Litecoin</option></optgroup></select></div>
+                        <div
+                            class="form-group"><label for="amountwithdraw">Amount To Withdraw<br></label><input class="form-control" type="number" id="amountwithdraw" min="10" max="10000"></div>
+                <div class="form-group mt-4"><button class="btn btn3" type="submit">Request Withdrawal</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <nav class="navbar navbar-light navbar-expand-md navbar-dashboard">
+        <div class="container-fluid"><a class="navbar-brand" id="logo2" href="../user/index.html"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"><i class="la la-ellipsis-h dashboard-icon"></i></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav pt-3 pb-3 nav2 pl-3">
+                    <li class="nav-item mr-4"><a class="nav-link active navlink2" href="../user/index.html">Dashboard</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/wallet.html">Wallet</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/investment.html">Investment</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/withdrawals.html">Withdrawals</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link navlink2" href="../user/messages.html">Messages<span class="badge badge-pill badge-primary pill-counter">42</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto pt-3 pb-3 nav2 pl-3">
+                    <li class="nav-item mr-4">
+                        <div class="nav-item dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img class="mr-2" src="../assets/img/client03.png" width="30">My Profile</a>
+                            <div class="dropdown-menu"><a class="dropdown-item pt-3 pb-3" href="../user/profile-settings.html">Profile &amp; Settings</a><a class="dropdown-item pt-3 pb-3" href="../index-old.html">Log Out</a></div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="d-flex">
+                    <div class="plan-div mobile-hidden" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-bar-chart plan-icon">
+  <path fill-rule="evenodd" d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"></path>
+</svg></div>
+                    <h1 class="dashboard-heading-h ml-3">Investments</h1>
+                </div>
+            </div>
+            <div class="col text-right mobile-center"><a class="btn btn3" role="button" href="mailto:info@sample.com">Contact Support</a></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-8 mb-3">
+                <div class="card-bg"><a class="btn float-right topbtn" role="button" href="investment.html">Go Back</a>
+                    <h4>Trader Pro</h4>
+                    <p class="date-p">20.10.2020 11:12</p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Amount Invested</td>
+                                    <td>$2343</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td><span class="badge badge-success card-badge-g">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Duration</td>
+                                    <td>365 Days</td>
+                                </tr>
+                                <tr>
+                                    <td>Date Initiated</td>
+                                    <td>20.10.2020 11:12</td>
+                                </tr>
+                                <tr>
+                                    <td>End Date</td>
+                                    <td>20.10.2020 11:12</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3 mobile-hidden">
+                <div class="card-bg trx-h">
+                    <h6 class="dashboard-h mb-4">Payout History</h6>
+                    <div class="trx-history-div">
+                        <div class="card card1 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-up-circle-fill green-up">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+</svg></div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-nowrap text-truncate mb-0 trx-heading">Completed</h6><span class="date-span">20.10.2020</span></div>
+                                    <div class="col">
+                                        <p class="text-nowrap deposit">$30.09</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card1 mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-up-circle-fill green-up">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+</svg></div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-nowrap text-truncate mb-0 trx-heading">Completed</h6><span class="date-span">21.10.2020</span></div>
+                                    <div class="col">
+                                        <p class="text-nowrap deposit">$30.09</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sample Invest</title>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Sample invest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <div class="modal fade" role="dialog" tabindex="-1" id="signup">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Sign Up</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <form id="signup">
+                        <div class="form-group"><label for="fullname">Full Name</label><input class="form-control" type="text" id="fullname" autofocus="" autocomplete="on" required="" minlength="2"></div>
+                        <div class="form-group"><label for="email">Email Address</label><input class="form-control" type="email" id="email" autocomplete="on" required=""></div>
+                        <div class="form-group"><label for="password">Password</label><input class="form-control pass" type="password" id="password" required="" minlength="4" maxlength="15" autocomplete="on"></div>
+                        <div class="form-group mt-4"><button class="btn btn3" type="submit">Create an Account</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="signin">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Sign In</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <form id="signin">
+                        <div class="form-group"><label for="authemail">Email Address</label><input class="form-control" type="email" id="authemail" autocomplete="on" required=""></div>
+                        <div class="form-group"><label for="authpass">Password</label><input class="form-control pass" type="password" id="authpass" required="" minlength="4" maxlength="15" autocomplete="on"></div>
+                        <div class="form-group mt-4"><a class="float-right" href="password-reset.html">Reset Password</a><a class="btn btn3" role="button" href="user/index.html">Access Dashboard</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="customplan">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+    <h4 class="modal-title">Hi There!</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i data-toggle="tooltip" class="la la-close"></i></span></button></div>
+                <div class="modal-body">
+                    <p class="body-p">We can see you are not satisfied without current investment plan types, please feel free to reach out to our support team to help you create your preferred plan via <a data-toggle="tooltip" data-bs-tooltip="" href="mailto:info@sample.com"
+                            title="Send us an email">email</a>&nbsp;or online chat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <!-- Start: Hero -->
+        <div class="bg-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-light navbar-expand-md">
+                            <div class="container-fluid"><a class="navbar-brand" id="logo2" href="index.html"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"><i class="la la-ellipsis-h"></i></span></button>
+                                <div
+                                    class="collapse navbar-collapse" id="navcol-1">
+                                    <ul class="nav navbar-nav mx-auto">
+                                        <li class="nav-item mr-4"><a class="nav-link active navlink2" href="index.html">Home</a></li>
+                                        <li class="nav-item mr-4"><a class="nav-link navlink2" href="index.html#about">About Us</a></li>
+                                        <li class="nav-item mr-4"><a class="nav-link navlink2" href="index.html#invest">Invest</a></li>
+                                        <li class="nav-item"><a class="nav-link navlink2" href="index.html#faqs">Faqs</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav ml-auto">
+                                        <li class="nav-item"><a class="nav-link navlink2" href="#signin" data-target="#signin" data-toggle="modal">Sign In</a></li>
+                                        <li class="nav-item"><a class="nav-link navbtn2" href="#signup" data-target="#signup" data-toggle="modal">Sign Up</a></li>
+                                    </ul>
+                            </div>
+                    </div>
+                    </nav>
+                </div>
+                <!-- Start: Hero Text -->
+                <div class="col-md-6 hero-text-col">
+                    <div class="new-notification-div"><span class="new-notification-span"><span class="badge badge-pill badge-info mr-2 badge-new">Promo</span>New user bonus!!! Get upto $250 when you sign up.</span>
+                    </div>
+                    <p class="hero-p mt-3">Most Trusted Investment Platform Today</p>
+                    <h1 class="hero-h2">Smart and secure way<br>to invest in <span id="typed2"><strong>crypto</strong></span></h1>
+                    <p class="hero-p-black mb-5">We are worldwide investment company who are committed to the principle of revenue maximization and reduction of the financial risks at investing</p><a class="btn btn1 mr-4" role="button" href="#invest">Invest Today</a><a class="btn btn4"
+                        role="button" href="#learn-more">Learn More</a><span class="d-block scroll-down2 mt-5 mobile-hidden">Scroll Down</span></div>
+                <!-- End: Hero Text -->
+                <div class="col" style="background: url(&quot;assets/img/bgg24.svg&quot;) center / cover no-repeat;">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- End: Hero -->
+    </header>
+    <!-- Start: pattern -->
+    <div class="pattern">
+        <!-- Start: Waves -->
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200"><path fill="#f6f7fb" fill-opacity="1" d="M0,32L1440,96L1440,0L0,0Z"></path></svg></div>
+        <!-- End: Waves -->
+        <div id="learn-more">
+            <!-- Start: Section 1 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <p class="text-center page-heading-p">Simplified Process</p>
+                        <h1 class="text-center page-heading-h">We Provide Blockchain Solutions<br>and Cryptocurrency Investments</h1>
+                    </div>
+                    <div class="col mb-3">
+                        <!-- Start: Feature Icon -->
+                        <div class="feature-div"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-toggles feature-icon">
+  <path fill-rule="evenodd" d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z"></path>
+</svg></div>
+                        <!-- End: Feature Icon -->
+                        <h6 class="feature-heading-number mt-5">01.</h6>
+                        <h6 class="feature-heading">Instant Exchange</h6>
+                        <p class="feature-p">Fames condimentum adipiscing vitae sodales, habitant aliquam. Aenean auctor ante cursus quisque, dapibus duis convallis.</p>
+                    </div>
+                    <div class="col mb-3 mm-0" style="margin-top: 80px;">
+                        <!-- Start: Feature Icon -->
+                        <div class="feature-div"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-currency-bitcoin feature-icon">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M6 6h8a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-8"></path>
+  <line x1="8" y1="6" x2="8" y2="18"></line>
+  <line x1="8" y1="12" x2="14" y2="12"></line>
+  <line x1="9" y1="3" x2="9" y2="6"></line>
+  <line x1="13" y1="3" x2="13" y2="6"></line>
+  <line x1="9" y1="18" x2="9" y2="21"></line>
+  <line x1="13" y1="18" x2="13" y2="21"></line>
+</svg></div>
+                        <!-- End: Feature Icon -->
+                        <h6 class="feature-heading-number mt-5">02.</h6>
+                        <h6 class="feature-heading">Multi-Currency Investment</h6>
+                        <p class="feature-p">Benefit from our extensive expertise through our highly select, yet a diversified range of multi-currency investments</p>
+                    </div>
+                    <div class="col mb-3 mm-0" style="margin-top: 160px;">
+                        <!-- Start: Feature Icon -->
+                        <div class="feature-div"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-credit-card-2-front feature-icon">
+  <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"></path>
+  <path d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"></path>
+  <path fill-rule="evenodd" d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"></path>
+</svg></div>
+                        <!-- End: Feature Icon -->
+                        <h6 class="feature-heading-number mt-5">03.</h6>
+                        <h6 class="feature-heading">Instant Payout</h6>
+                        <p class="feature-p">You can make a withdrawal whenever your balance allows it. Funds will be immediately sent to your preferred cryptocurrency&nbsp; wallet.</p>
+                    </div>
+                    <div class="col mb-3 mm-0" style="margin-top: 240px;">
+                        <!-- Start: Feature Icon -->
+                        <div class="feature-div"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-2fa feature-icon">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M7 16h-4l3.47 -4.66a2 2 0 1 0 -3.47 -1.54"></path>
+  <path d="M10 16v-8h4"></path>
+  <line x1="10" y1="12" x2="13" y2="12"></line>
+  <path d="M17 16v-6a2 2 0 0 1 4 0v6"></path>
+  <line x1="17" y1="13" x2="21" y2="13"></line>
+</svg></div>
+                        <!-- End: Feature Icon -->
+                        <h6 class="feature-heading-number mt-5">04.</h6>
+                        <h6 class="feature-heading">Safe &amp; Secure Transactions</h6>
+                        <p class="feature-p">We provide the highest level of data protection for your account. We use the best secured servers and security tools.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End: Section 1 -->
+        </div>
+        <!-- Start: Waves -->
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200"><path fill="#f6f7fb" fill-opacity="1" d="M0,32L1440,96L1440,320L0,320Z"></path></svg></div>
+        <!-- End: Waves -->
+    </div>
+    <!-- End: pattern -->
+    <div id="about" class="bg-section2 bg-grey">
+        <!-- Start: Section 1 -->
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-md-6 pr-5 mb-4">
+                    <p class="text-left page-heading-p2">Learn More</p>
+                    <h1 class="text-left page-heading-h mb-3">About {{Sample}}</h1>
+                    <p class="body-p mb-5">{{Sample}}&nbsp;is an innovative and practical cryptocurrency investment platform online, which welcomes all members worldwide. We act solely as a facilitator between you and the Enterprise. We are committed to putting our clients
+                        at the heart of our business by delivering high-quality investment services. Moreover, we respect our customers, cherish their confidence and help to achieve excellent results.</p><a class="btn btn3" role="button" href="#invest"
+                        data-target="#invest" data-modal="modal">Explore More</a></div>
+                <div class="col-md-6 text-center mobile-hidden"><img class="img-fluid bounce-top mobile-hidden" src="assets/img/bgg29.svg"></div>
+                <div class="col-md-12 mt-5 mb-5"></div>
+                <div class="col-md-6 text-center mobile-hidden"><!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+  {
+  "colorTheme": "light",
+  "dateRange": "12M",
+  "showChart": true,
+  "locale": "en",
+  "largeChartUrl": "",
+  "isTransparent": true,
+  "showSymbolLogo": true,
+  "width": "400",
+  "height": "450",
+  "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
+  "plotLineColorFalling": "rgba(33, 150, 243, 1)",
+  "gridLineColor": "rgba(240, 243, 250, 1)",
+  "scaleFontColor": "rgba(120, 123, 134, 1)",
+  "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+  "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+  "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+  "tabs": [
+    {
+      "title": "Forex",
+      "symbols": [
+        {
+          "s": "BITBAY:BTCUSD"
+        },
+        {
+          "s": "KRAKEN:ETHUSD"
+        },
+        {
+          "s": "BITFINEX:XRPUSD"
+        }
+      ],
+      "originalTitle": "Forex"
+    }
+  ]
+}
+  </script>
+</div>
+<!-- TradingView Widget END --></div>
+                <div class="col-md-6 pt-5 mb-4 pl-5">
+                    <p class="text-left page-heading-p2">Get Your Profits</p>
+                    <h1 class="text-left page-heading-h mb-3"><strong>Store, exchange and invest</strong></h1>
+                    <p class="body-p">Advanced artificial intelligence and revolutionary blockchain technologies are already in your free wallet! Get passive income with our trading robots!</p>
+                    <ul class="list-unstyled">
+                        <li class="body-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 list-icon">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Multi-currency wallet for secure storage of funds</li>
+                        <li class="body-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 list-icon">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Fast currency exchange office</li>
+                        <li class="body-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 list-icon">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Account with passive income function</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End: Section 1 -->
+    </div>
+    <!-- Start: pattern -->
+    <div class="pattern">
+        <!-- Start: Waves -->
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200"><path fill="#f6f7fb" fill-opacity="1" d="M0,32L1440,96L1440,0L0,0Z"></path></svg></div>
+        <!-- End: Waves -->
+        <div>
+            <div class="container testimonial-block2">
+                <div class="row">
+                    <div class="col-md-5 pr-4 mb-3"><img class="img-fluid d-xl-flex" src="assets/img/bgg27.svg" width="100">
+                        <p class="text-left page-heading-p2">Testimonials</p>
+                        <h1 class="text-left page-heading-h mb-3">2000+ Happy Clients Around The World</h1>
+                        <p class="body-p2">We have a lot of&nbsp; happy investors around the world with us . Here are a few&nbsp; impressions from our clients.</p>
+                    </div>
+                    <div class="col">
+                        <div class="carousel slide" data-ride="carousel" id="carousel-1">
+                            <div class="carousel-inner pt-5">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <div class="card mb-3 testimonial-card">
+                                                <div class="card-body">
+                                                    <p class="body-p">Condimentum class cubilia proin dictum, risus bibendum ut varius. Pharetra purus vivamus, lorem luctus libero.</p>
+                                                </div>
+                                            </div><img class="img-fluid" src="assets/img/client02.png"></div>
+                                        <div class="col text-center">
+                                            <div class="card mb-3 testimonial-card">
+                                                <div class="card-body">
+                                                    <p class="body-p">Condimentum class cubilia proin dictum, risus bibendum ut varius. Pharetra purus vivamus, lorem luctus libero.</p>
+                                                </div>
+                                            </div><img class="img-fluid" src="assets/img/client03.png"></div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <div class="card mb-3 testimonial-card">
+                                                <div class="card-body">
+                                                    <p class="body-p">Condimentum class cubilia proin dictum, risus bibendum ut varius. Pharetra purus vivamus, lorem luctus libero.</p>
+                                                </div>
+                                            </div><img class="img-fluid" src="assets/img/client01.png"></div>
+                                        <div class="col text-center">
+                                            <div class="card mb-3 testimonial-card">
+                                                <div class="card-body">
+                                                    <p class="body-p">Condimentum class cubilia proin dictum, risus bibendum ut varius. Pharetra purus vivamus, lorem luctus libero.</p>
+                                                </div>
+                                            </div><img class="img-fluid" src="assets/img/client02.png"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <!-- Start: Previous --><a class="carousel-control-prev hidden" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a>
+                                <!-- End: Previous -->
+                                <!-- Start: Next --><a class="carousel-control-next hidden" href="#carousel-1" role="button" data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                                <!-- End: Next -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start: Waves -->
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200"><path fill="#f6f7fb" fill-opacity="1" d="M0,32L1440,96L1440,320L0,320Z"></path></svg></div>
+        <!-- End: Waves -->
+    </div>
+    <!-- End: pattern -->
+    <div id="invest" class="bg-section2 bg-grey">
+        <!-- Start: Section 1 -->
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-md-4 pt-5 pr-5 mb-4">
+                    <p class="text-left page-heading-p2">Get Statred</p>
+                    <h1 class="text-left page-heading-h mb-3">Our Investment Plans</h1><a class="btn btn3" role="button" href="#signin" data-target="#signin" data-toggle="modal">Invest Now</a></div>
+                <div class="col-md-4 mb-5">
+                    <!-- Start: Card -->
+                    <div class="p-4 plan-card">
+                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-award plan-icon">
+  <path fill-rule="evenodd" d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l-1.51-.229L8 1.126l-1.355.702-1.51.229-.684 1.365-1.086 1.072L3.614 6l-.25 1.506 1.087 1.072.684 1.365 1.51.229L8 10.874l1.356-.702 1.509-.229.684-1.365 1.086-1.072L12.387 6l.248-1.506-1.086-1.072-.684-1.365z"></path>
+  <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"></path>
+</svg></div>
+                        <h5 class="plan-h mt-4">Basic One</h5>
+                        <ul class="list-unstyled">
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>1.10% Daily</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $500 - Max: $1500</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                        </ul>
+                    </div>
+                    <!-- End: Card -->
+                </div>
+                <div class="col-md-4 mb-5">
+                    <!-- Start: Card -->
+                    <div class="p-4 plan-card">
+                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-app-indicator plan-icon">
+  <path fill-rule="evenodd" d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"></path>
+  <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+</svg></div>
+                        <h5 class="plan-h mt-4">Basic Pro</h5>
+                        <ul class="list-unstyled">
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>1.50% Daily</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $1500 - Max: $2500</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                        </ul>
+                    </div>
+                    <!-- End: Card -->
+                </div>
+                <div class="col-md-4 mb-5">
+                    <!-- Start: Card -->
+                    <div class="p-4 plan-card">
+                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-bounding-box-circles plan-icon">
+  <path fill-rule="evenodd" d="M2 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM0 2a2 2 0 0 1 3.937-.5h8.126A2 2 0 1 1 14.5 3.937v8.126a2 2 0 1 1-2.437 2.437H3.937A2 2 0 1 1 1.5 12.063V3.937A2 2 0 0 1 0 2zm2.5 1.937v8.126c.703.18 1.256.734 1.437 1.437h8.126a2.004 2.004 0 0 1 1.437-1.437V3.937A2.004 2.004 0 0 1 12.063 2.5H3.937A2.004 2.004 0 0 1 2.5 3.937zM14 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM2 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+</svg></div>
+                        <h5 class="plan-h mt-4">Professional</h5>
+                        <ul class="list-unstyled">
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>2.05% Daily</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $5000 - Max: $10000</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                        </ul>
+                    </div>
+                    <!-- End: Card -->
+                </div>
+                <div class="col-md-4 mb-5">
+                    <!-- Start: Card -->
+                    <div class="p-4 plan-card">
+                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-briefcase plan-icon">
+  <path fill-rule="evenodd" d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6h-1v6a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-6H0v6z"></path>
+  <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5v2.384l-7.614 2.03a1.5 1.5 0 0 1-.772 0L0 6.884V4.5zM1.5 4a.5.5 0 0 0-.5.5v1.616l6.871 1.832a.5.5 0 0 0 .258 0L15 6.116V4.5a.5.5 0 0 0-.5-.5h-13zM5 2.5A1.5 1.5 0 0 1 6.5 1h3A1.5 1.5 0 0 1 11 2.5V3h-1v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V3H5v-.5z"></path>
+</svg></div>
+                        <h5 class="plan-h mt-4">Trader Pro</h5>
+                        <ul class="list-unstyled">
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>3.01% Daily</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $15000 - Max: $50000</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                        </ul>
+                    </div>
+                    <!-- End: Card -->
+                </div>
+                <div class="col-md-4 mb-5">
+                    <!-- Start: Card -->
+                    <div class="p-4 plan-card">
+                        <div class="plan-div" style="box-shadow: 8px 9px rgba(42,48,254,0.1);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-bar-chart plan-icon">
+  <path fill-rule="evenodd" d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"></path>
+</svg></div>
+                        <h5 class="plan-h mt-4">Trader Max</h5>
+                        <ul class="list-unstyled">
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>3.8% Daily</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Min: $50000 - Max: $150000</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Contract 300 Days</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Daily Payout</li>
+                            <li class="plan-p mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-check-circle-fill mr-2 plan-icon2">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+</svg>Top Up Available</li>
+                        </ul>
+                    </div>
+                    <!-- End: Card -->
+                </div>
+                <div class="col-md-12 text-center"><a href="#customplan" data-target="#customplan" data-toggle="modal">Customize Your Investment Plan</a></div>
+            </div>
+        </div>
+        <!-- End: Section 1 -->
+    </div>
+    <div class="pattern">
+        <!-- Start: Waves -->
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200"><path fill="#f6f7fb" fill-opacity="1" d="M0,32L1440,96L1440,0L0,0Z"></path></svg></div>
+        <!-- End: Waves -->
+        <div id="faqs" class="pt-5 pb-5">
+            <div class="container pt-5 pb-5">
+                <div class="row flex-wrap-reverse">
+                    <div class="col mb-3">
+                        <div role="tablist" id="FAQs">
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header" role="tab">
+                                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="FAQs .item-1" href="#FAQs .item-1" class="accordion-btn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-plus-square-fill mr-3">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+</svg>Is Sample Investment registered?</a></h5>
+                                </div>
+                                <div class="collapse item-1" role="tabpanel" data-parent="#FAQs">
+                                    <div class="card-body">
+                                        <p class="card-text accordion-p">Proin ad neque vulputate dolor blandit, torquent tortor. Quam praesent odio, cras aenean sagittis curabitur duis. Donec etiam velit senectus varius nisi, orci senectus tempor interdum nunc. Ultricies pellentesque
+                                            leo quis, mollis iaculis lacinia. Felis habitant ut, proin torquent metus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header" role="tab">
+                                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="FAQs .item-2" href="#FAQs .item-2" class="accordion-btn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-plus-square-fill mr-3">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+</svg>How do I sign up?</a></h5>
+                                </div>
+                                <div class="collapse item-2" role="tabpanel" data-parent="#FAQs">
+                                    <div class="card-body">
+                                        <p class="card-text accordion-p">Proin ad neque vulputate dolor blandit, torquent tortor. Quam praesent odio, cras aenean sagittis curabitur duis. Donec etiam velit senectus varius nisi, orci senectus tempor interdum nunc. Ultricies pellentesque
+                                            leo quis, mollis iaculis lacinia. Felis habitant ut, proin torquent metus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header" role="tab">
+                                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="FAQs .item-3" href="#FAQs .item-3" class="accordion-btn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-plus-square-fill mr-3">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+</svg>How do i deposit to my wallet</a></h5>
+                                </div>
+                                <div class="collapse item-3" role="tabpanel" data-parent="#FAQs">
+                                    <div class="card-body">
+                                        <p class="card-text accordion-p">Proin ad neque vulputate dolor blandit, torquent tortor. Quam praesent odio, cras aenean sagittis curabitur duis. Donec etiam velit senectus varius nisi, orci senectus tempor interdum nunc. Ultricies pellentesque
+                                            leo quis, mollis iaculis lacinia. Felis habitant ut, proin torquent metus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header" role="tab">
+                                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="FAQs .item-4" href="#FAQs .item-4" class="accordion-btn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-plus-square-fill mr-3">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+</svg>How I Withdraw?</a></h5>
+                                </div>
+                                <div class="collapse item-4" role="tabpanel" data-parent="#FAQs">
+                                    <div class="card-body">
+                                        <p class="card-text accordion-p">Proin ad neque vulputate dolor blandit, torquent tortor. Quam praesent odio, cras aenean sagittis curabitur duis. Donec etiam velit senectus varius nisi, orci senectus tempor interdum nunc. Ultricies pellentesque
+                                            leo quis, mollis iaculis lacinia. Felis habitant ut, proin torquent metus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card accordion-item">
+                                <div class="card-header accordion-header" role="tab">
+                                    <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="FAQs .item-5" href="#FAQs .item-5" class="accordion-btn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-plus-square-fill mr-3">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+</svg>Does Sample Investment have an affiliate program?</a></h5>
+                                </div>
+                                <div class="collapse item-5" role="tabpanel" data-parent="#FAQs">
+                                    <div class="card-body">
+                                        <p class="card-text accordion-p">Proin ad neque vulputate dolor blandit, torquent tortor. Quam praesent odio, cras aenean sagittis curabitur duis. Donec etiam velit senectus varius nisi, orci senectus tempor interdum nunc. Ultricies pellentesque
+                                            leo quis, mollis iaculis lacinia. Felis habitant ut, proin torquent metus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pl-5">
+                        <p class="text-left page-heading-p2">FAQs</p>
+                        <h1 class="text-left page-heading-h mb-3"><strong>Frequent Questions</strong></h1>
+                        <p class="body-p">Have a questions you need answers to? Our FAQs might be able to answer a few questions. Remember to reach out to us if you have more questions.</p><a class="btn btn3" role="button" href="mailto:info@sample.com">Ask A Question</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-top">
+            <div class="row mobile-hidden">
+                <div class="col">
+                    <p class="text-left page-heading-p2">Accessibility</p>
+                    <h1 class="text-left page-heading-h mb-3"><strong>Mobile Ready Platform</strong><br></h1>
+                </div>
+                <div class="col text-center"><img class="img-fluid phone heartbeat" src="assets/img/iphone.png" width="30%"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-footer footer pt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link footer-nav-link" href="#">Terms and Conditions</a></li>
+                        <li class="nav-item"><a class="nav-link footer-nav-link" href="#">Privacy &amp; Security Statement</a></li>
+                    </ul>
+                    <div class="copyright">
+                        <p>© 2020 Sample Investment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
